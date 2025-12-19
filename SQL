@@ -1,0 +1,42 @@
+Sql:
+
+--> 
+
+1. Primary key:
+
+--> Primary key is basically used to uniquely find each record in database tables. Primary key should be unique and does not contain duplicate or null values.
+
+2. Foreign key:
+---> Foreign key is basically act as refrence in another table which are used to connect two tables together. i.e Foreign key in one table is act as primary key in another table.
+It can contain duplicate values and null values. we can have multiple foreign key per table.
+
+
+What is stored procedure and Stored dunction?
+-->  Stored procedure and stored functions are basically precompiled set of statements which is used to execute sequence of tasks/operations as a sinle unit. It is stored in database.
+
+Adavtange over ormal queries:
+
+1. It improves the performace and faster as its Compiled once and stored in the database.
+2. Reduces netwrok traffic.
+3. Can be resued by multiple applications or multiple services.
+4. Prevents SQL injection — you can grant execute permission instead of exposing raw tables.
+
+IN, INOUT, OUT,
+Indexes
+Sql injection
+joins
+triggers
+cursors
+
+select * from employee e INNER JOIN DEPARTEMENt dept where e.dept = detp.deptID
+
+1. What is index? and what are its types:
+
+--> Index is basically used to improve the performance of query. its basically used for faster searching and faster retrival of data.
+
+
+Their are two types of indexes:
+1. Clustered index: Clustered index defines the physical order in which data should be stored. 
+
+2. Non clustered index: Non clustered index doesn not define the physical order in which data should be stored. it stores data at one place and index at one place where index contain the  address or pointer to the location of  data. Its similar to index of book where we have subjects/topics and its page no. where its available.
+

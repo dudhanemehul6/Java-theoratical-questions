@@ -1,0 +1,97 @@
+Basic
+
+WHat is composition and association?
+
+---> Both composition and association represnts has a relationship but Compsotion represnt the strong relationship where child cannot live without parens.
+where association represnt weak relationship where the child can live independeny without parent.
+
+Internal working of hashmap:
+
+1. HAshmap is basically used to store elements in key-value format. HAshmap internally uses bucket to store elemements. and each bucket use linkedlist to store elemennts where linkedlist store elements in node.
+SO when we are trying to add custom object in map, that time hashCode method gets called to calculate hash code of key object, which is used by hash function to find the index of bucket. Once index of bucket is finalised, then equals methpod get called on object to check if there is already presnt key with the same name which we are trying to add, if there is no key, then new node is created and values is stored, if not presnt, then new node is created and values is stored. thats how hashmap works internally.
+
+ParalleSTream vr sequential stream:
+
+---> In parallelSTream, Data is split or divided into small parts and each part is processed by multiple threads at a same time on different cpu cores. Also in case of parallel stream, order of excution is not guaranted as multiple threads executed concurrently. Parallel streams are slightltly faster compared to Sequential stream,
+
+where as,  in case of sequential stream, data is processed by single thread on single cpu core sequentially. In case of Sequentail stream, order of execution is sequential. And its slightly slower compared to parallel stream as single thread is executing the task.
+
+What is streams:
+Streams are basically collection of objects which is used to proceess over collections of elemements.
+
+Map Vs FlatMap:
+
+Map is basically used for data transformation i.e it transforms each element of stream into another object.
+
+whereas flatMap is used for data transfomation as well as flattering the data. i.e it converts streams of streams into single streams.
+
+
+Difference between REST and SOAP:
+
+---> REST is Representational state transfer. It supports json and xml response where SOAP is Simple object access protocol which supports XML format only. Also REST support http and https porticol but SOAP supports http and SMTP portocol. SOAP is complex bcoz its uses XML so difficult to read from XML.
+
+Explain JVM architcture?
+--> JVM is basically java virtual machine which is an abstract machine which convert java code into machine understandable code i.e byte code and byte code is platfrom independent so it can be executed on any machine.
+
+JVM architecture consist of multiple compoenents:
+
+1. class loader:
+--> Class loader is responsible for loading class files. When we write java code, its compiled by java comipler which converts java files into .clas files. to load these files we use class loaders.
+
+There are 3 resposibilites performed by ClassLoaders: Loading(loads .class files and store class level info), Linking(it checks for correctrnees of program i.e syntax), and initialization(it initializses static variable with values.)
+
+There are three types of class loaders:
+1. Bootstrap loaders: It loads .claass files from bootstrap path. i.e javahome/jre/lib folder.
+2. Extension loader: it loads .class files from /jre/lib/ext folder.
+3. Application or system loder: it loads .class files from application path which is defined in environemnt variable.
+
+
+Then we hae other components, i.e Memory areas allocated by JVM.
+
+1. Method or Class area: It stores class level information, i.e Fully qualified class name, its parent, Method names defined in class and variables inside class. All thsi information stord in method or class area.
+
+2. Heap area: HEap area is used to store Object information. i.e how much memory taken by object and other object related information.
+
+3. Stack area: stack area is used to store thread related information. i.e for each therad it create stack frame or activation records. It stores method information which executed by thread.
+
+4. Pc counter register: It stores address of currently executed instructions by thread.
+
+5. Native method area: It stores native method information. Native method means external liberaries which is used in java to execute some program
+
+Execution Engine:
+
+Executio engine is responsible for compiling the code and executing the code.
+There are three parts in Execution engine.
+
+1. Interepreter: It interpretes code line by line.
+2. JIT comipler: It also compiles the code but it doesnt compile the code which is getting frequently executed.
+3. Garbage collectors: Garbage collector is responsible for destroyng the object once object eligible for destroy.
+
+Java Native interface.
+
+
+
+Interview questions pratice:
+
+1. WHat is Immutable classes and how can we create immutable classes?
+
+---> Immutable classes aree those whose objects can't be modified or changed once created.
+To create Immutable class, we can mark class as a Final so that it cannot be extended. Also will make filed as private so that it wont be accessed from outside. Also will add only getter and not setters.
+
+Advantage:
+1. Thread safe.
+2. Security.
+
+2. What is difference between Runnable and Collable interface.
+---> Both Runnable and Collable are functional interface which are used to represent task that can be executed by Thread.
+Runnablke having run method which doesnt return anything. where as collable having call method which returns result. 
+
+Runnable is used with Thread class or Executors to perform tasks where s collable is used with collable to perform tasks.
+
+
+
+
+
+
+
+

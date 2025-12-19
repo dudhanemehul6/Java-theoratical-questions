@@ -1,0 +1,15 @@
+AOP:
+
+What is AOP?
+
+---> AOP is basically Aspect oriented programming which helps devlopers to define/write aspects i.e common behaviors that can run before, after, or around specific method executions without modifying the actual code of those methods.
+
+For example, instead of writing logging code inside every service method, we can create a single “LoggingAspect” class that automatically logs entry and exit of all service methods.
+This reduces code duplication and keeps our business logic clean.
+
+
+Logging and auditing
+Transaction management
+Security checks
+Performance monitoring
+Exception handling

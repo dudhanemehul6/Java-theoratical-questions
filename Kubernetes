@@ -1,0 +1,105 @@
+Kubernetes:
+
+Kubernetes is open source container orchestration platform which is used to automate deployment, scaling, and management of containerized applications.
+
+Advantages:
+
+!- It automatically scales up the pods based on traffic load.
+2. It deploys new code without downtime.
+3. Built-in mechanisms to evenly distribute traffic between diff pods.
+4. Self healing: It automatically replaces or restart the failed containers or pods.
+
+
+Pod:
+
+--> Pod is basically smallest deployable unit which represnt single instance of application.
+
+Deployment:
+
+--> deployment is basically kubernetes objects to manage the pods.
+
+
+
+Kubernetes commands
+
+Get pods
+kubectl --kubeconfig stage.conf get pods | grep fdx
+
+Describe pods 
+kubectl --kubeconfig stage.conf describe pod direct-integration-platform-usbank-586dbd7cf8-cxfv6
+ 
+
+get logs in file 
+kubectl --kubeconfig stage.conf logs  fisglobaldirect-6f579dd587-vtsd7   >> fisglobal4.txt
+
+edit the deployment file:
+kubectl --kubeconfig stage.conf edit cm fdx-parser
+kubectl --kubeconfig stage.conf edit deployment fdx-parser
+
+rollout/ restart of deployment:
+kubectl --kubeconfig stage.conf rollout restart deploy biltdirect
+
+scale down pod:
+
+kubectl --kubeconfig stage.conf scale deploy biltdirect --replicas=0
+
+Describe configMap :
+kubectl --kubeconfig stage.conf describe configmap direct-integration-platform-atlanta
+
+To execute curl command in cluster:
+
+Kubectl --kubeconfig stage.conf  exec -it fdx-parser-579bc74ffd-x5k8h sh
+
+Then run curl command
+
+ 
+kubectl --kubeconfig kube-stg-new.conf logs -f -l app=wellsconnections
+ 
+kubectl --kubeconfig kube-stg-new.conf describe configmap direct-integration-platform-atlanta
+ 
+kubectl --kubeconfig kube-stg-new.conf delete pod usaadirect-784465fcdc-z4dxb
+ 
+ 
+kubectl --kubeconfig kube-stg-new.conf scale deployconnectivity-queue-manager-pcx --replicas=1
+ 
+kubectl --kubeconfig kube-stg-new.conf get deployment direct-integration-platform-fiserv
+ 
+Kubectl --kubeconfig stage.conf  exec -it chasedirect-77fdfff565-52sg6 sh
+ 
+kubectl --kubeconfig kube-stg-new.conf get nodes -A
+ 
+kubectl --kubeconfig kube-stg-new.conf get events | findstr "fiserv-direct-api-57f69f956b"
+ 
+kubectl --kubeconfig kube-stg-new.conf rollout restart deploy chaseconnection
+ 
+kubectl --kubeconfig kube-stg-new.conf exec biltdirect-6fbf55fb96-44z6b -- ls /usr/src/app/config
+
+kubectl delete pod biltdirect-b89dccfc8-zpqqf  
+
+
+kubectl --kubeconfig dev-bconfig.conf logs  fisglobaldirect-587887646f-nq4cv >> globalll.txt
+
+
+Design patterns in microservices:
+---> There are multiple design patterns in microservices, But i know some of them.
+
+1. API Gateway Design pattern:
+
+API Gateway Design pattern provides single entry point for clients to route the requests to particular microservices. It act as front controller to route the traffic to multiple microservices.
+
+
+2. Databse per microservices;
+
+----> In database per microservcies, Each microservice has its own database which ensures loose coupling and independent data management.
+
+3. Circuit breaker pattern:
+
+---> 
+
+4. SAGA design pattern
+
+5. Service discovery Design pattern: 
+
+---> In service discovrey pattern, Microservices get registered with service registery so that microservices can communictae with each other.
+
+

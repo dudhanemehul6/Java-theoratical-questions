@@ -1,0 +1,34 @@
+Hibernate:
+
+What is Hibernate?
+--> Hibernate is basically ORM tool i.e Object relational mapping model which is used to automatically map java object into database tables without writing complex sql queries. Earlier developers needs to write complex SQL queries to store data or fetch data from database so that overhead we are reducing with the help of Hibernate.
+
+Advantages:
+
+1. Boiler plate code:
+---> We dont need to write complx jdbc code to open or closed conenctions or also dont need to handle the exceptions manually.
+
+2. Object relation mapping model:
+
+--> It will automatically convert java object into database tables with this we will achiev object oriented programming approach..
+
+3. Exception handling:
+-->Hibernate provide in build exception handling mechanism so we need not to manually handle the exceptions.
+
+4. Automatic table creation:
+
+--> Hibernate 
+
+
+
+1. What is JPA?
+
+JPA (Java Persistence API) is a Java specification (part of Java EE / Jakarta EE) that defines how Java objects are mapped into database tables.
+
+What is the difference between NamedQuery and NamedNative Query:
+
+NamedQuery and NamedNativeQuery both are used to write custom queries to retrive data, or update data or insert data. But difference between both is that
+
+NamedQUery works directly with entity objects and its properties and not directly work with database tables and its columns. It uses HQL or JPQL to directly map java objects into database tables.
+
+Where as NamedNativeQUery works directly with database tables and column names. It uses SQL to work with database tables. And its platfrom dependent means if tomorrow you want to use other database then we need to update database queries in your application.

@@ -1,0 +1,124 @@
+Multi:
+
+What is multitasking:
+
+---> Multitasking is the process of executing multiple tasks simulataneously where each task is separate independent proceess thats called multitasking.
+
+What is multithreading:
+
+Multithreading is process of executing multiple tasks simultaneously where each task is seperate independenat part of same program thats called as thread and overall process is called multithreading.
+
+
+WHat is Thread and process?
+
+---> Process in program in execution whereas Thread is lightweight part of process which is used to execute multiple tasks simutaneously.
+
+What are the types of threads?
+
+--> Their are two types of thread , One is User thread and second is daemon thread.
+
+User Thread: User thread are those which is created by developers.
+
+Where as daemon threads are low priority threads which run in background to perform garbage collections. It is run by JVM.
+
+
+
+How to Create a User thread?
+
+--> Their are two ways to create user threads, 1. By extending Thread class 2. implementing Runnable Interface.
+
+WHat is Thread priority:
+
+---> Thread priority means every thread in java has a priority that helps Thread scheduler or OS to determine the oder in which threads should be executed.
+SO default priority is 5, min priority is 1 and max priority is 10.
+
+
+WHat is Sleep, Wait and jon method?
+
+--> Sleep: Sleep method is used to stop or pause the execution of currently exceuted thread for specific interval of time. Its basically used to delay the execution. Also it doesnot releases the lock on object. 
+So once specific interval completed, Same thread can continue with exeucting the task.
+
+Wait: Wait method causes currently executed thread to wait until another thread completes its executiopn or another thread class notify or notifyAll() method. Its basically used for inter-thread communication between two threads. Also it release the lock on object.
+
+Join: Join methoid cause the currently executed thread to stop executing the task unless another thread completes its task on which join() is called.  It's basically used to add sequence among more than one thread.
+
+
+Yield: yield() method caused the currently executing thread to stop temporarily, and allowing other threads of the same priority to get a chance to execute. it doesnot release the lock on object.
+
+What is completableFuture:
+
+--> CompletableFuture is used to enable the async programming in java. It represnts future result of an asynchronous computation.
+
+There are multiple features provided by completableFuture:
+
+Non-blocking operations
+Chaining of dependent tasks.
+Combining multiple async tasks.
+Callabcks: If we want to perform some action after async task get completed then we can do that in callbacks. 
+Exception handling.
+
+Difference between runAsync and supplyAsync:
+
+runAsync() is a method used to execute a task asynchronously but doesn’t produce a result. So we can use runAsync method where we want to execute code asynchronously without waiting for a result. For example, logging, sending notifications, or triggering background tasks. The method doesn’t provide an explicit mechanism for handling exceptions within the asynchronous task so we need to handle the exception manually when we call get() method.
+
+supplyAsync() is a method used to  execute a task asynchronously that produces a result. So we can use suppllyAsync where we want to perform some further processing on return result. e.x. If we are fetching data from database and want to perform some operation or any third party api call. It offers an exception-handling mechanism via the exceptionally() method
+
+Diference between ThenCompose and Thencombine:
+
+thenCompose()	Chains two dependent futures (output of one is input to another)
+thenCombine()	Combines results of two independent futures
+
+
+Method	Description
+allOf()	Waits for all futures to complete
+anyOf()	Waits for any one future completes
+
+
+What is synchronization?
+
+---> Synchronization is the process of controlling access of mutiple threads to access the same shared resouce.
+
+Types of Synchronization
+Method Synchronization: Locks the entire method to ensure only one thread executes it at a time.
+Block Synchronization: Locks only the critical section of code within a method.
+
+
+Difference between Synchronized block and synchronized method?
+
+---> When we declare method as synchronized then only one thread at a time allow to execute that method. where as synchronized block is used to lock only specific portion of code inside method.
+Synchonized block is more efficienet as it block only specific portion and not block entire method. in case of synchroinzed method, it locks the unncessary code as well which make it less efficent.
+
+What is Thread pool and what are its types?
+
+--> Thread pool is basically collection of worker threads which is managed by JVM.
+
+Their are multiple ways to create thread pool.
+
+FixedThreadPool
+CachedThreadPool
+ScheduledThreadPool
+SingleThreadExecutor
+
+What is deadlock? and how to avoid deadlock in java?
+
+---> Deadlock is situation whwre two or more threads are waiting for each other to release lock forever then deadlock occurs. To avoid deadlock, use minimum snchronization and also avoid using nested locks.
+
+What is volatile keyword in java?
+
+---> When we make any variable as volatile it ensures that changes made to this variable by one thread is always written in main memory and it is visible to other threads. It doesnt cache the data in local memory.
+
+
+Write program for movie booking system with managing threas. 
+
+
+What is Reentrant Locks?
+
+---> Reentrant locks are similar to Synchronized locks which are used to control the access of multiple threads to access same shared resources. But difference between both is , In case of Reentrant locks there is explicit locking means we explicitely lock and unlock the lock. But in case of synchronized lokcs there is implicit locks. Also in case of Reentrant locks, we can acquire multiple locks on same object multiple times. This is useful in case of recursion when one thread is calling to itslf again and again. Also it provides feature of Fair locking when this option is true, The thread which waiting for longer period to get lock will get lock first which avoids problem of starvation.
+
+
+
+
+
+
+
+

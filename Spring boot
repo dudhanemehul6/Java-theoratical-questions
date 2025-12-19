@@ -1,0 +1,55 @@
+Spring boot:
+
+---> 
+
+Explain Scope of beans?
+
+---> Bean scope defines the lifecycle and visibility of a bean within the container. It tells Spring how many instances of a particular bean should be created and how long they should be available
+
+
+Their are five types of bean scope,
+
+Singleton
+Prototype
+Request
+Session
+Application
+
+1. Singleton: Default scope of bean is singleTon. When we define scope as singleton then only one instace of bean is created inside spring container and that instance is used/shared through out the application.
+
+UseCase: We can use singleton scope for database connection pool, We will create class with singleton scope in which we will write logic to make connection with databse and that bean is used acroos application to perfrom database operation.
+
+2. prototype:
+
+---When we define scope of bean as prototype then it creates new instance of bean everytime when requested from spring container.
+
+Usecase: Prototype scope is ideal for stateful beans or instances that hold temporary data and are expected to change frequently.
+e.ex Lets say We are calling third party APi through restTemplate in which we need to pass RequesData in body, so will create object and will store requestData in that object. so we can mark that class as Prototype as it can store temp data for each request.
+
+3. Request scope:
+
+--> When we define scope as Request then it will create instance for evry http request.
+
+useCase: It is used for request specific data like seesion tokens or any temp data within http request
+
+4. Session scope:
+--> When we define scope as session scope, It will create new instance for each user session in web application.
+
+USe case: Session scope is ideal for session specific data like user information or data that needs to persist throughout the session.
+
+5 application: 
+
+--> When we define the scope of bean is application, then it will create only one bean per servletcontext.
+
+UseCase: Its ideally used for sharing data across request and session like configuration details.
+
+
+Difference between RestController and Controller annotation:
+
+
+
+
+
+
+
+

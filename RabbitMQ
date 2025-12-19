@@ -1,0 +1,31 @@
+RabbitMQ:
+
+WHat is RabbitMq? WHat are the advantages of RabbitMQ:
+
+--> RabbitMQ is an message broker which uses AMQP i.e Advanced Message Queueing Protocol to communicate asynchronously between multiple micro-services by publishing and receiving messages.
+
+It accepts messages from producers, routes them via exchanges, stores them in queues, and delivers them to consumers. Thats how it works.
+
+Benefits:
+
+1. Aysnchronous communication: It allows async communication between multiple microsrvices. i.e Producers can publish message and move on, it doesnt wait for response. Consumer can process message based on availability of threads.
+
+2. Decoupling: Producers and consumers can work independently without knowing each others specific details.
+
+3. Security: It uses AMQP protocol which ensure shat all communications happenes in consumer and publisher are secure. 
+
+
+Key concepts of RMQ:
+
+1. Binding: Binding is connection or link between  Exchange and queuue.
+
+2. Routing Key: Routing key is basically used by Exchanges to route traffic to queue.
+
+3. Exchange: Exchange is an intermediate or central hub which receieves message from Producer and routes messages to appropriate queue based on routingKeys or exchange types.
+
+
+Types of exchanges:
+
+1. Topic exchange: Topic exchange route messages to queue based on wildcard matches between routingKey and binding key.
+
+2. Fanout Exchange : A fanout exchange routes messages to all queues that are linked to it and ignore the routing key.

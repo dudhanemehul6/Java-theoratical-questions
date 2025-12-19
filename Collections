@@ -1,0 +1,45 @@
+Collections:
+
+Collections are basically used for storing and manipulating the objects. It provides multiple interfaces to store and manipulates the data . For example: List, Queue, Set, Map
+
+
+What is the difference between List and Set:
+
+----> List is basically ordered collection of elements, it allows duplicate and null values. It maintains insertion order, so we can use list if we want to prerserve order and want duplicate elements. Random access is possible with List.
+
+e.x. ArrayList, LinkedList, Vector, Stack
+
+Set is basically used to store unique values .i.e it doesnt allow duplicate values and it can contain one null value. Also it doesnt maintain insertion order.
+Random access not allowed in set.
+
+e.x HashSet(One null value , no insertion order maintained), LinkedHashSet(maintain insertion order and allow one null value), TreeSet(No null, order elements in natural sorting order)
+
+
+1. Difference between Array and ArrayList
+
+--> Array is basically fixed size data structure which is used to store homogenous element in contigeous memory locations. Array can store primitives as well as objects. Array is faster than arraylist as there is no overhead of dynamic resizing of elements.
+
+Araylist is dynamic in nature means its size grows dynamically when you try to add elements. It can store objects only.
+
+2. Diference between ArrayList and LinkedList
+
+
+
+Set:
+
+---> 
+
+
+HashSet vs LinkedHashSet:
+
+---> 
+
+
+
+
+
+
+
+
+
+

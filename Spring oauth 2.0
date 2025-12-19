@@ -1,0 +1,40 @@
+Spring oauth 2.0
+
+--> Oauth 2 is an authorization framework that enables third party applications such as instagram, facebook, or twitter to obtain limited access to user accounts without sharing user credentials with third party apps.
+It works by delegating user authentication to the service that hosts a user account and authorizing third party applications to access that user account.
+
+
+In our project, we are using the OAuth 2.0 only, to authorize third-party partners to access users’ bank data.
+
+how it works — when a user wants to connect their bank account, we redirect them to the bank’s login page. Then user add their Login credntials and gives consent to share their data. Once consent is given, Bank issues authorization code or grant code. We uses that grant code to exchange refresh and access tokens. And using access tokens we Call banks API to get accounts data or transactions data based on requirment.
+ 
+
+What is SSO?
+--> SSO means single sign on which allows uuser to sign in once and access multiple applications without needing to sign in again.
+
+---> For example: 
+
+Lets say you have portal, where you have multiple apps like, Gitlab, Slack, workday. And you want to access gitlab for the first time. then it will ask you to login so when you choose SSO option to login then service provider will redirect you to Identity provider i.e OKTA or AUtho Login page, Once USer login, Identity provider will create SAML response. i.e Security Assertion markup Langugae which is open standard XML format to exchange the identity info and what user is allows to access. Then user will able to access the Gitlab. But lets say user now want to access workday, so when user try to access workday, Service provider will redirect request to Identity provider, Identity provider will check if user is already authenticated then it allows user to directly access without needing to login again.
+
+What is SAML:
+
+---> SAML is Security Assertion MArkup Language, its an xml based open standard for exchanging identity information between services. i.e User information and what user allows to access.
+
+
+Whaqt is feign client
+
+-->RestTemplate and FeignCLient both are used for inter service communication between multiple microservices. But diff between both is that, In case of RestTemplate, When you are calling third party API's, we need build URL manually, Also we need to pass the headers and body in request, Also need to mention Serialization and deserialization logic. MEans we set return type of response so that it will automatically bind to return type object. so thats the overhead we need to do for each request.
+
+But in case of feignclient, Itse declarative approach for inter service communcation between multiple microservices. Means we create interface, we add abstract methods in it, we add some annotation and rest of the other things will be done by feignClient automatically. You need not explicitley mention headers or return type or no need manually build uRL.
+
+
+
+What is Sleuth and Zipkin:
+
+--> sleuth and zipkin both are used for distributed tracing system which helps you to track the single request through multiple microservices.
+
+Zipkin shows you which services a request passed through, how long each step took, and where any latency or failure occurred.
+
+
+
+
